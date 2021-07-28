@@ -1,0 +1,19 @@
+{
+  "name": "oauth",
+  "version": "1.0.0",
+  "description": "oauth for lichess app",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "expressjs": "^1.0.1",
+    "node-fetch": "^2.6.1"
+  }
+}
