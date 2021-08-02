@@ -1,8 +1,6 @@
 import json, requests
 from datetime import datetime
 
-from requests.models import Response
-
 class Lichess():
 	api_key = None
 	headers = None
@@ -81,17 +79,7 @@ class Lichess():
 	def createSeek(self):
 		try:
 			url = 'https://lichess.org/api/board/seek'
-			data = {
-				'rated': False,
-				'time': 5,
-				'increment': 0,
-				'variant': 'standard',
-				'color': 'random'
-			}
-			res = requests.post(url, headers=self.headers, data=data, stream=True)
-			if res.status_code == 200:
-				return
-			return
+			return requests.post(url, headers={'Authorization': f'Bearer {self.api_key}'}, stream=True)
 		except Exception as e:
 			print(f'[{datetime.now().strftime("%H:%M:%S")}]: Error seek {e}')
 
